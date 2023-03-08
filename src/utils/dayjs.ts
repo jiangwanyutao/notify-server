@@ -16,7 +16,7 @@ const WEEKS: { [key: number]: string } = {
 }
 
 export const weekToday = () => {
-  const week = dayjs().get('days') + 1
+  const week = dayjs().get('days')
   return WEEKS[week]
 }
 
