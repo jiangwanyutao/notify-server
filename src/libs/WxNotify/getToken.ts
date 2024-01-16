@@ -16,6 +16,7 @@ export async function getToken({ id, secret }: IReqToken): Promise<string> {
         'Content-Type': 'application/json',
       },
     })
+    console.log(response.data.access_token,'token')
     return response.data.access_token
   }
   catch (error) {

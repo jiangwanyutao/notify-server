@@ -7,6 +7,7 @@ import { getConfig } from '../../utils/getConfig'
 import { wxNotify } from '../WxNotify'
 import { textTemplate } from './templates/text'
 import { textCardTemplate } from './templates/textcard'
+import { newTextTemplate } from './templates/newtext'
 
 const CONFIG = getConfig().loveMsg
 
@@ -55,10 +56,12 @@ const weatherInfo = async () => {
     if (weather) {
       const lunarInfo = await API.getLunarDate(weather.date)
       const template = textCardTemplate({ ...weather, lunarInfo })
+      const templates = newTextTemplate({ ...weather, lunarInfo })
       console.log('weatherInfo', template)
 
       // 发送消息
       await wxNotify(template)
+      await wxNotify(templates)
     }
   } catch (error) {
     console.log('weatherInfo:err', error)

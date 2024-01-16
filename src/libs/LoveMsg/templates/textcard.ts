@@ -48,6 +48,8 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
     description += ` ${festival_info}
 农历 | ${lubarmonth}${lunarday} ${lunar_festival_info} ${jieqi_info}`
   }
+  description += `
+  [ 点我有惊喜 ] ❤️ 🧡 💛 💚 💖`
 
   description += `\n今日天气状况：
 天气：${weather}
