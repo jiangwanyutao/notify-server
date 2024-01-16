@@ -61,7 +61,7 @@ const weatherInfo = async () => {
 
       // 发送消息
       await wxNotify(template)
-      await wxNotify(templates)
+      // await wxNotify(templates)
     }
   } catch (error) {
     console.log('weatherInfo:err', error)
